@@ -1,0 +1,19 @@
+{
+  "name": "west-scheduler-app",
+  "version": "1.0.0",
+  "description": "West Scheduler App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukewesty828/west-scheduler-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukewesty828/west-scheduler-app/issues"
+  },
+  "homepage": "https://github.com/lukewesty828/west-scheduler-app#readme"
+}
