@@ -5,12 +5,11 @@
 
 <style>
 
-
+/* Personal Table Styles */
    .table {
        /* border: 1px solid black; */
-       width: 80%;
+       width: 75%;
        box-sizing: border-box;
-       height: 350px;
        display: flex;
        flex-direction: column;
    }
@@ -43,27 +42,119 @@
 
    .cell_title {
        box-sizing: border-box;
+       display: flex;
        border: 1px solid black;
-       text-align: center;
-       font-size: x-large;
+       justify-content: center;
+       font-size: 1.5rem;
        font-weight: bold;
-       width: 24%;
+       width: 30%;
        background: #ccc;
        margin: 5px;
        padding: .5%;
 
-       
-       /* width: 100%;
-       height: 100%; */
    }
    .table_cell {
        box-sizing: border-box;
-       text-align: center;
-       width: 23%;
+       display: flex;
+       justify-content: center;
+       width: 30%;
        background: #ccc;
        margin: 10px 1%;
        padding: 1%;
    }
+
+/* Calendar Styles */
+.calendar-month {
+    display: inline-block;
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    list-style-type: none;
+}
+.calendar-month .week {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.calendar-month .week__header {
+    order: 1;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 2px;
+    width: 14.2857%;
+    box-sizing: border-box;
+}
+.calendar-month .week__header:nth-child(7) {
+    border-right: 0;
+}
+@media (max-width: 767px) {
+  .calendar-month .week__header {
+    padding: 10px 0;
+    font-size: 0;
+  }
+}
+.calendar-month .days {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+.calendar-month .day {
+    position: relative;
+    order: 1;
+    width: 14.2857%;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.calendar-month .day:nth-child(7n + 7) {
+    border-left: none;
+}
+.calendar-month .day:nth-child(7n + 7) {
+    border-right: none;
+}
+.calendar-month .day:after {
+  /* Create responsive square div */
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}    
+.calendar-month .day:hover {
+  background: #eee;
+}
+.calendar-month .day__number {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .calendar-month .day__number {
+    right: 5px;
+    top: 5px;
+  }
+}
+.calendar-month .day--empty {
+  background: #f8f8f8;
+}
+.calendar-month .day--empty:hover {
+  cursor: default;
+  background: #f8f8f8;
+}
+.calendar-month a {
+  display: block;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -95,25 +186,217 @@
                 </div>
                     <div class="table__body">
                         <div class="table__row">
-                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                             <div class="table_cell">TEST</div>
                             <div class="table_cell">TEST</div>
                         </div>
                         <div class="table__row">
-                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                             <div class="table_cell">TEST</div>
                             <div class="table_cell">TEST</div>
                         </div>
                         <div class="table__row">
-                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                            <div class="table_cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                             <div class="table_cell">TEST</div>
                             <div class="table_cell">TEST</div>
                         </div>
-
-                    <div>
-
-                </div>
+                    </div>
                 </div>
             </div>
-    
-            <br/>
+        </div>
+    </div>
+
+
+    <ol class="calendar-month">
+        <li class="week">
+          <ol class="days">
+            <div class="week__header">Monday</div>
+            <div class="week__header">Tuesday</div>
+            <div class="week__header">Wednesday</div>
+            <div class="week__header">Thursday</div>
+            <div class="week__header">Friday</div>
+            <div class="week__header">Saturday</div>
+            <div class="week__header">Sunday</div>
+          </ol>
+        </li>
+        <li class="week">
+          <ol class="days">
+            <li class="day day--empty"></li>
+            <li class="day day--empty"></li>
+            <li class="day day--empty"></li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">1</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">2</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">3</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">4</span>
+              </a>
+            </li>
+          </ol>
+        </li>
+         <li class="week">
+          <ol class="days">
+            <li class="day">
+              <a href="#">
+                <span class="day__number">5</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">6</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">7</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">8</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">9</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">10</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">11</span>
+              </a>
+            </li>
+          </ol>
+        </li>
+        <li class="week">
+          <ol class="days">
+            <li class="day">
+              <a href="#">
+                <span class="day__number">12</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">13</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">14</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">15</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">16</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">17</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">18</span>
+              </a>
+            </li>
+          </ol>
+        </li>
+        <li class="week">
+          <ol class="days">
+            <li class="day">
+              <a href="#">
+                <span class="day__number">19</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">20</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">21</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">22</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">23</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">24</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">25</span>
+              </a>
+            </li>
+          </ol>
+        </li>
+        <li class="week">
+          <ol class="days">
+            <li class="day">
+              <a href="#">
+                <span class="day__number">26</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">27</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">28</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">29</span>
+              </a>
+            </li>
+            <li class="day">
+              <a href="#">
+                <span class="day__number">30</span>
+              </a>
+            </li>
+            <li class="day day--empty"></li>
+            <li class="day day--empty"></li>
+          </ol>
+        </li>
+      </ol>
+
+
+
+</body>
+</html>
